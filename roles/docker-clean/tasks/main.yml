@@ -1,0 +1,13 @@
+---
+  - name: Kill all containers
+    shell: docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+    ignore_errors: true
+    register: docker_kill
+
+  - debug: msg="{{ docker_kill.stdout }}"
+
+  - name: Check docker containers
+    command: 'docker ps'
+    register: docker_ps
+
+  - debug: msg="{{ docker_ps.stdout_lines }}"

@@ -1,0 +1,17 @@
+---
+  - name: Update packages
+    apt:
+      update_cache: yes
+      cache_valid_time: 300
+
+  - name: Installing prerequisites
+    apt:
+      name:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - gnupg
+        - lsb-release
+        - python3-pip
+      state: present
+      update_cache: yes

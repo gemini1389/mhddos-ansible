@@ -1,0 +1,5 @@
+- hosts: vms
+
+  roles:
+    - { role: docker-clean }
+    - { role: mhddos }

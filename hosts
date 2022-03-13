@@ -1,0 +1,18 @@
+[vms]
+
+[all:vars]
+# SSH
+ansible_connection=ssh
+ansible_user=root
+ansible_ssh_pass=
+
+# Docker
+docker_container_count=
+docker_container_image=portholeascend/mhddos_proxy
+docker_container_name=mhddos
+
+# MHDDOS
+mhddos_threads=300
+mhddos_period=300
+mhddos_rpc=1000
+mhddos_targets=""

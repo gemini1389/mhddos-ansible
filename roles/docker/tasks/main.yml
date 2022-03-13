@@ -1,0 +1,25 @@
+---
+  - name: Add Docker GPG apt Key
+    shell: 'curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --batch --yes --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'
+
+  - name: Add Docker Repository
+    shell: 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bullseye stable" | tee /etc/apt/sources.list.d/docker.list'
+
+  - name: Update apt and install docker
+    apt:
+      name:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+      state: latest
+      update_cache: true
+
+  - name: Install Docker Module for Python
+    pip:
+      name: docker
+
+  - name: Check docker version
+    command: 'docker -v'
+    register: docker_version
+
+  - debug: msg="{{ docker_version.stdout }}"
