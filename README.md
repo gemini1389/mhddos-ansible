@@ -17,6 +17,10 @@
 brew install hudochenkov/sshpass/sshpass
 ```
 
+Створення серверів
+========================
+[Інструкція](docs/digitalocean.md) для [DigitalOcean](https://www.digitalocean.com/).
+
 Конфігурація плейбука
 ========================
 Всі налаштування знаходяться у файлі [hosts](hosts).
