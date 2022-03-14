@@ -1,0 +1,6 @@
+---
+  - name: Check docker containers
+    command: 'docker ps'
+    register: docker_ps
+
+  - debug: msg="{{ docker_ps.stdout_lines }}"

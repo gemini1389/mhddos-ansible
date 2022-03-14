@@ -3,3 +3,4 @@
   roles:
     - { role: docker-clean }
     - { role: mhddos }
+    - { role: docker-ps }

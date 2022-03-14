@@ -37,6 +37,7 @@ brew install hudochenkov/sshpass/sshpass
 - `docker.yml` - встановлення потрібного софту на сервери
 - `start.yml` - запуск (створення контейнерів на серверах з потрібними налаштуваннями в потрібній кількості)
 - `stop.yml` - зупинка (видалення всіх контейнерів)
+- `status.yml` - отримати результат `docker ps` з кожного сервера
 
 **Команди запуска**
 Для запуску вказаних команд потрібно знаходитись у папці проекта.
@@ -45,4 +46,5 @@ brew install hudochenkov/sshpass/sshpass
 ansible-playbook -i hosts docker.yml
 ansible-playbook -i hosts start.yml
 ansible-playbook -i hosts stop.yml
+ansible-playbook -i hosts status.yml
 ```
