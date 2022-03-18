@@ -6,7 +6,7 @@
         source: pull
 
     - name: Create containers
-      shell: docker run -dit --name=mhddos_proxy_{{ item }} --restart=unless-stopped portholeascend/mhddos_proxy -t {{ mhddos_threads }} -p {{ mhddos_period }} --rpc {{ mhddos_rpc }} {{ mhddos_targets }}
+      shell: docker run -dit --name=mhddos_proxy_{{ item }} --restart=unless-stopped {{ docker_container_image }} -t {{ mhddos_threads }} -p {{ mhddos_period }} --rpc {{ mhddos_rpc }} {{ mhddos_targets }}
       with_sequence: count={{ docker_container_count }}
     rescue:
     - fail: msg="Shit happens ¯\_(ツ)_/¯"

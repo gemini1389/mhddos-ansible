@@ -8,7 +8,7 @@ ansible_ssh_pass=
 
 # Docker
 docker_container_count=
-docker_container_image=portholeascend/mhddos_proxy
+docker_container_image=ghcr.io/porthole-ascend-cinnamon/mhddos_proxy
 docker_container_name=mhddos
 
 # MHDDOS
