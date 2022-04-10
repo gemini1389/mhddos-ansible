@@ -7,12 +7,11 @@ ansible_user=root
 ansible_ssh_pass=
 
 # Docker
-docker_container_count=
+docker_container_count=1
 docker_container_image=ghcr.io/porthole-ascend-cinnamon/mhddos_proxy
 docker_container_name=mhddos
 
 # MHDDOS
 mhddos_threads=300
-mhddos_period=300
 mhddos_rpc=1000
 mhddos_targets=""
